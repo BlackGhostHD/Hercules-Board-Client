@@ -1,0 +1,8 @@
+@import "./styles/base";
+@import "./styles/colors";
+
+// dark mode
+@media (prefers-color-scheme: dark) {
+    @import "./styles/colors.dark";
+    @import "./styles/images.dark";
+}
