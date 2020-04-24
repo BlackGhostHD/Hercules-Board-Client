@@ -1,26 +1,43 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div id="app" :class="{ fullscreen: isFullscreen }">
+    <sidebar :isFullscreen.sync="isFullscreen" />
+    <router-view class="content-page" />
   </div>
 </template>
+
+<script>
+import Sidebar from "@/components/Sidebar.vue";
+
+export default {
+  name: "App",
+  components: {
+    Sidebar
+  },
+  data() {
+    return {
+      isFullscreen: false
+    };
+  }
+};
+</script>
 
 <style lang="scss">
 @import "./styles/main.scss";
 
-#nav {
-  padding: 30px;
+.content-page {
+  transition: all 0.2s;
+  margin-left: var(--sidebar-width);
+  position: relative;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  @media only screen and (max-width: 720px) {
+    top: var(--navbar-height);
+    margin-left: 0;
+  }
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.fullscreen {
+  .content-page {
+    margin-left: 0;
   }
 }
 </style>

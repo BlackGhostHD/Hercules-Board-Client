@@ -5,4 +5,11 @@ img {
     &:hover{
         opacity: 1;
     }
+
+    &.img_light {
+        display: none;
+    }
+    &.img_dark {
+        display: inline;
+    }
 }
