@@ -17,4 +17,8 @@
   --color-text-muted: rgb(128, 128, 128);
 
   --color-cards: rgb(27, 34, 58);
+
+  --color-info-text: var(--color-text);
+  --color-warning-text: rgb(0, 0, 0);
+  --color-danger-text: var(--color-text);
 }
