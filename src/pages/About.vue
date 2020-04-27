@@ -12,6 +12,9 @@
         <BaseCard type="info">info</BaseCard>
       </div>
       <div class="col s12 m6 l4">
+        <BaseCard type="success">success</BaseCard>
+      </div>
+      <div class="col s12 m6 l4">
         <BaseCard type="warning">warning</BaseCard>
       </div>
       <div class="col s12 m6 l4">
@@ -23,6 +26,9 @@
       </div>
       <div class="col s12 m6 l4">
         <BaseCard type="info" :filled="true">info</BaseCard>
+      </div>
+      <div class="col s12 m6 l4">
+        <BaseCard type="success" :filled="true">success</BaseCard>
       </div>
       <div class="col s12 m6 l4">
         <BaseCard type="warning" :filled="true">warning</BaseCard>

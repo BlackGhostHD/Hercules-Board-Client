@@ -10,7 +10,7 @@ export default {
   props: {
     type: {
       type: String,
-      enum: ["default", "info", "warning", "danger"],
+      enum: ["default", "success", "info", "warning", "danger"],
       default: "dafault"
     },
     filled: {
@@ -32,6 +32,14 @@ export default {
   border-width: 2px;
   border-style: solid;
   border-color: var(--color-sidebar);
+
+  &.success {
+    border-color: var(--color-success);
+    &.filled {
+      color: var(--color-success-text);
+      background-color: var(--color-success);
+    }
+  }
 
   &.info {
     border-color: var(--color-info);
