@@ -22,8 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/main.scss";
-
 .content-page {
   transition: all 0.2s;
   margin-left: var(--sidebar-width);
