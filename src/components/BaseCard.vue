@@ -39,12 +39,23 @@ export default {
   methods: {
     getTextColor(hexcolor) {
       if (hexcolor) {
+        const rgb = hexcolor.match(
+          /^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i
+        );
+        hexcolor =
+          rgb && rgb.length === 4
+            ? "#" +
+              ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+              ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+              ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2)
+            : hexcolor;
+
         hexcolor = hexcolor.replace("#", "");
         var r = parseInt(hexcolor.substr(0, 2), 16);
         var g = parseInt(hexcolor.substr(2, 2), 16);
         var b = parseInt(hexcolor.substr(4, 2), 16);
         var yiq = (r * 299 + g * 587 + b * 114) / 1000;
-        return yiq >= 180
+        return yiq >= 118
           ? "var(--color-text-black)"
           : "var(--color-text-white)";
       }
@@ -71,6 +82,8 @@ export default {
   border-width: 2px;
   border-style: solid;
   border-color: var(--color-sidebar);
+  border-radius: 4px;
+  margin: 5px;
   color: var(--color-text);
 
   &.success {
