@@ -9,6 +9,9 @@ module.exports = ({ config }) => {
 			'css-loader',
 			{
 				loader: 'sass-loader',
+				options: {
+					prependData: `@import "@/styles/main.scss";`
+				}
 			}
 		],
 	})

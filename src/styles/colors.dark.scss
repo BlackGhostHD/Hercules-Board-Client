@@ -1,12 +1,4 @@
 :root {
-  // --main-bg-color: rgb(36, 36, 36);
-  // --main-sidebar-color: rgb(45, 52, 61);
-  // --main-text-color: rgb(210, 210, 210);
-  // --text-color-muted: rgb(128, 128, 128);
-  // --text-color-selected: rgb(200, 200, 200);
-  // --link-color: rgb(207, 139, 3);
-  // --link-color-hover: rgb(255, 170, 0);
-
   --color-background: rgb(26, 35, 57);
 
   --color-sidebar: rgb(43, 48, 84);
@@ -14,12 +6,8 @@
   --color-sidebare-text-muted: rgb(180, 180, 180);
 
   --color-text: rgb(210, 210, 210);
+  --color-text-inverted: rgb(0, 0, 0);
   --color-text-muted: rgb(128, 128, 128);
 
   --color-cards: rgb(27, 34, 58);
-
-  --color-success-text: rgb(255, 255, 255);
-  --color-info-text: rgb(255, 255, 255);
-  --color-warning-text: rgb(0, 0, 0);
-  --color-danger-text: rgb(255, 255, 255);
 }

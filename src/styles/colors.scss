@@ -1,16 +1,9 @@
-:root {
-    // --main-bg-color: #f0f0f0;
-    // --main-header-color: rgb(207, 230, 237);
-    // --main-sidebar-color: rgb(255, 255, 255);
-    // --main-footer-color: rgb(228, 228, 228);
-    // --main-title-color: rgb(46, 46, 46);
-    // --main-text-color: rgb(112, 112, 112);
-    // --text-color-muted: rgb(128, 128, 128);
-    // --text-color-selected: rgb(0, 0, 0);
-    // --main-accent-color: rgb(255, 170, 0);
-    // --link-color: rgb(207, 139, 3);
-    // --link-color-hover: rgb(255, 170, 0);
+$color-success: rgb(11, 163, 96);
+$color-info: rgb(2, 144, 205);
+$color-warning: rgb(240, 180, 0);
+$color-danger: rgb(245, 60, 91);
 
+:root {
     --color-background: rgb(240, 240, 240);
 
     --color-sidebar: rgb(255, 255, 255);
@@ -18,18 +11,16 @@
     --color-sidebare-text-muted: rgb(112, 112, 112);
 
     --color-text: rgb(112, 112, 112);
+    --color-text-white: rgb(255, 255, 255);
+    --color-text-black: rgb(0, 0, 0);
     --color-text-muted: rgb(128, 128, 128);
 
     --color-cards: rgb(255, 255, 255);
 
     --color-scrollbar-thumb: rgb(128, 128, 128);
 
-    --color-success: #0ba360;
-    --color-success-text: rgb(255, 255, 255);
-    --color-info: #0290cd;
-    --color-info-text: rgb(255, 255, 255);
-    --color-warning: #ffc107;
-    --color-warning-text: rgb(255, 255, 255);
-    --color-danger: #f53c5b;
-    --color-danger-text: rgb(255, 255, 255);
+    --color-success: $color-success;
+    --color-info: $color-info;
+    --color-warning: $color-warning;
+    --color-danger: $color-danger;
 }

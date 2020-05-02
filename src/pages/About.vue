@@ -20,6 +20,10 @@
       <div class="col s12 m6 l4">
         <BaseCard type="danger">danger</BaseCard>
       </div>
+      <div class="col s12 m6 l4">
+        <BaseCard color="#f4e1ad">custom</BaseCard>
+      </div>
+
       <div class="col s12">Cards filled</div>
       <div class="col s12 m6 l4">
         <BaseCard>default</BaseCard>
@@ -35,6 +39,9 @@
       </div>
       <div class="col s12 m6 l4">
         <BaseCard type="danger" :filled="true">danger</BaseCard>
+      </div>
+      <div class="col s12 m6 l4">
+        <BaseCard color="#f4e1ad" :filled="true">custom</BaseCard>
       </div>
     </div>
   </div>
