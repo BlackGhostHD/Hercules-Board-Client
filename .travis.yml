@@ -1,5 +1,7 @@
   
 language: node_js
+node_js:
+  - "10"
 stages:
   - lint
   - test
@@ -18,3 +20,6 @@ jobs:
       script:
         # Build all
         - npm run build
+cache:
+  directories:
+    - node_modules
