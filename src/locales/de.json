@@ -1,4 +1,10 @@
 {
   "routes.name.dashboard": "Dashboard",
-  "routes.name.settings": ""
+  "routes.name.myPullRequest": "Meine Pull Request",
+  "routes.name.pullRequest": "Offene Pull Request",
+  "routes.name.settings": "Einstellungen",
+  "pages.login.headline": "Willkommen zurück",
+  "pages.login.providers.btnText.github.com": "Mit Github anmelden",
+  "pages.settings.profile.LoggedInVia": "Angemeldet über {provider}",
+  "pages.settings.profile.logout": "Abmelden"
 }

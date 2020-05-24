@@ -83,7 +83,9 @@ export default {
   border-style: solid;
   border-color: var(--color-sidebar);
   border-radius: 4px;
+  display: flex;
   margin: 5px;
+  padding: 5px;
   color: var(--color-text);
 
   &.success {

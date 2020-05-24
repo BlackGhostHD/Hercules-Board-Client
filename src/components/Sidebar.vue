@@ -8,7 +8,7 @@
       ></button>
       <div class="sidebar-sticky">
         <div class="side-nav">
-          <div class="branding">
+          <div class="branding center-align">
             <img src="../assets/logo.png" class="img_light" height="48px" />
             <img
               src="../assets/logo_dark.png"
@@ -23,9 +23,9 @@
               v-bind:key="route.name"
               :to="`${route.path}`"
             >
-              <li>
+              <li v-if="route.meta.displayName && route.icon">
                 <i class="material-icons">{{ route.icon }}</i>
-                {{ route.name }}
+                {{ route.meta.displayName }}
               </li>
             </router-link>
           </ul>
@@ -35,9 +35,7 @@
           class="btn toggle"
           @click="handleFullscreen"
         ></button>
-        <div class="footer text-center">
-          © {{ currentYear }} Christian Sommer
-        </div>
+        <Footer />
       </div>
     </nav>
   </header>
@@ -45,9 +43,11 @@
 
 <script>
 import routesList from "@/router/routes";
+import Footer from "@/components/Footer";
 
 export default {
   name: "Sidebar",
+  components: { Footer },
   data() {
     return {
       isFullscreen: false,
@@ -57,9 +57,6 @@ export default {
   computed: {
     routes() {
       return routesList.filter(route => route.icon);
-    },
-    currentYear() {
-      return new Date().getFullYear();
     }
   },
   created() {
@@ -280,15 +277,5 @@ nav {
       display: inline;
     }
   }
-}
-
-.footer {
-  position: absolute;
-  width: 100%;
-  margin-bottom: 20px;
-  bottom: 0;
-  color: var(--color-sidebare-text-muted);
-  font-size: 14px;
-  line-height: normal;
 }
 </style>
