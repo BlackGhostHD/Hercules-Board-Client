@@ -1,41 +1,26 @@
 <template>
-  <div id="app" :class="{ fullscreen: isFullscreen }">
-    <sidebar :isFullscreen.sync="isFullscreen" />
-    <router-view class="content-page" />
+  <div id="app">
+    <component :is="layout">
+      <router-view />
+    </component>
   </div>
 </template>
 
 <script>
-import Sidebar from "@/components/Sidebar.vue";
+const defaulLayout = "defaultLayout";
 
 export default {
   name: "App",
-  components: {
-    Sidebar
-  },
+  components: {},
   data() {
-    return {
-      isFullscreen: false
-    };
+    return {};
+  },
+  computed: {
+    layout() {
+      return this.$route.meta.layout || defaulLayout;
+    }
   }
 };
 </script>
 
-<style lang="scss">
-.content-page {
-  transition: all 0.2s;
-  margin-left: var(--sidebar-width);
-  position: relative;
-
-  @media only screen and (max-width: 720px) {
-    top: var(--navbar-height);
-    margin-left: 0;
-  }
-}
-
-.fullscreen {
-  .content-page {
-    margin-left: 0;
-  }
-}
-</style>
+<style lang="scss"></style>
