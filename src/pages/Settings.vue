@@ -23,9 +23,12 @@
         </button> -->
         </div>
       </BaseCard>
+      <BaseCard class="button" :filled="true">
+        <b>github repositorys</b>
+      </BaseCard>
       <span class="version">V.01-Alpha (24.05.2020)</span>
       <BaseCard
-        class="logout"
+        class="button logout"
         type="danger"
         :filled="true"
         @click.native="logout()"
@@ -57,14 +60,11 @@ export default {
       itemData: {}
     };
   },
-  mounted() {
-    setTimeout(() => {
-      this.itemData = {
-        title: "Item Title",
-        body:
-          "Make beautiful, animated loading skeletons that automatically adapt to your app."
-      };
-    }, 1500);
+  async mounted() {
+    console.log(await this.$axios.get(
+        "https://api.github.com/users/BlackGhostHD/repos"
+      ));
+    this.$store.dispatch("github/getRepos");
   },
   methods: {
     logout: function() {
@@ -102,12 +102,15 @@ export default {
   margin-left: 8px;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .logout {
   i {
     margin-right: 5px;
   }
   width: fit-content;
   float: right;
-  cursor: pointer;
 }
 </style>

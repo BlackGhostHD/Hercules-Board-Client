@@ -73,10 +73,6 @@ export default {
   }
 }
 
-@function hexToRGB($hex) {
-  @return red($hex), green($hex), blue($hex);
-}
-
 .card {
   background-color: var(--color-sidebar);
   border-width: 2px;

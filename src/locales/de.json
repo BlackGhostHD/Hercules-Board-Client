@@ -6,5 +6,6 @@
   "pages.login.headline": "Willkommen zurück",
   "pages.login.providers.btnText.github.com": "Mit Github anmelden",
   "pages.settings.profile.LoggedInVia": "Angemeldet über {provider}",
-  "pages.settings.profile.logout": "Abmelden"
+  "pages.settings.profile.logout": "Abmelden",
+  "routes.name.tools": "Tools"
 }

@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue";
 import BaseCard from "@/components/BaseCard";
 import { color, boolean, text } from "@storybook/addon-knobs";
 
-storiesOf("1 Base UI Components", module).add("BaseCard", () => ({
+storiesOf("2 Base UI Components", module).add("BaseCard", () => ({
   components: { BaseCard },
   props: {
     color: {

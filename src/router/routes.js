@@ -34,6 +34,15 @@ const routes = [
     }
   },
   {
+    path: "/tools",
+    name: "tools",
+    component: About,
+    icon: "build",
+    meta: {
+      displayName: i18n.t("routes.name.tools")
+    }
+  },
+  {
     path: "/settings",
     name: "settings",
     component: Settings,
@@ -49,6 +58,7 @@ const routes = [
     meta: {
       layout: "noSidebarLayout",
       requiresNoAuth: true,
+      hideForAuth: true,
       redirect: "dashboard"
     }
   }
