@@ -80,7 +80,7 @@ export default {
 
 .login-wrapper {
   height: 100vh;
-  background-image: url(../assets/hercules.jpg);
+  // background-image: url();
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

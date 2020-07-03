@@ -1,5 +1,6 @@
-import Home from "../pages/Home";
-import About from "../pages/About";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import MyPrs from "@/pages/MyPrs";
 import Login from "@/pages/Login";
 import Settings from "@/pages/Settings";
 import i18n from "../i18n";
@@ -18,7 +19,7 @@ const routes = [
   {
     path: "/mypullrequests",
     name: "myPullRequest",
-    component: About,
+    component: MyPrs,
     icon: "merge_type",
     meta: {
       displayName: i18n.t("routes.name.myPullRequest")

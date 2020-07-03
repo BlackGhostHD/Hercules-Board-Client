@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
 
-import setup from '@/helpers/axios';
+import setup from "@/helpers/axios";
 
 // plugins
 import firebase from "./plugins/firebase";
@@ -15,14 +15,11 @@ import github from "./github";
 Vuex.Store.prototype.$axios = setup();
 
 const store = new Vuex.Store({
-  plugins: [
-    createPersistedState({ paths: ["user"] }), 
-    firebase,
-  ],
+  plugins: [createPersistedState({ paths: ["user", "github"] }), firebase],
   modules: {
     user,
     github
   }
 });
 
-export default store
+export default store;

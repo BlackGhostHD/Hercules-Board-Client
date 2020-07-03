@@ -1,11 +1,10 @@
 import { storiesOf } from "@storybook/vue";
-import Color from "./components/Color"
-import { color, boolean, text } from "@storybook/addon-knobs";
+import Color from "./components/Color";
 
 storiesOf("1 Base CSS", module).add("Color", () => ({
-  components: {Color},
+  components: { Color },
   template: `
-  <div>
+  <div style="padding: 0 20px;">
   	<h3>Sidebar</h3>
 	<div class="row">
 		<Color variable="--color-sidebar" />
@@ -29,16 +28,3 @@ storiesOf("1 Base CSS", module).add("Color", () => ({
   </div>
   `
 }));
-
-// --color-sidebar: rgb(255, 255, 255);
-// --color-sidebare-text: rgb(60, 60, 60);
-// --color-sidebare-text-muted: rgb(112, 112, 112);
-
-// --color-text: rgb(112, 112, 112);
-// --color-text-white: rgb(255, 255, 255);
-// --color-text-black: rgb(0, 0, 0);
-// --color-text-muted: rgb(128, 128, 128);
-
-// --color-cards: rgb(255, 255, 255);
-
-// --color-scrollbar-thumb: rgb(128, 128, 128);
