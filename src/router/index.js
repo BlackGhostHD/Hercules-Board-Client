@@ -13,8 +13,11 @@ const router = new VueRouter({
 router.beforeEach(async (to, from, next) => {
   const isAuthenticated = store.getters["user/isAuthenticated"];
   const requiresAuth = to.matched.some(record => !record.meta.requiresNoAuth);
+  const hideForAuth = to.matched.some(record => record.meta.hideForAuth);
   if (!isAuthenticated && requiresAuth) {
     next("login");
+  } else if (hideForAuth && isAuthenticated) {
+    next("dashboard");
   } else {
     next();
   }

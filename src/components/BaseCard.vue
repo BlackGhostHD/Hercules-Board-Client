@@ -1,7 +1,7 @@
 <template>
-  <section :class="classes" :style="cssVars">
+  <div :class="[classes, position]" :style="cssVars">
     <slot />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -10,12 +10,17 @@ export default {
   props: {
     type: {
       type: String,
-      enum: ["default", "success", "info", "warning", "danger"],
+      enum: ["default", "success", "info", "warning", "danger", "disabled"],
       default: "dafault"
     },
     filled: {
       type: Boolean,
       default: false
+    },
+    position: {
+      type: String,
+      enum: ["", "sidebar"],
+      default: ""
     },
     color: {
       type: String
@@ -73,13 +78,9 @@ export default {
   }
 }
 
-@function hexToRGB($hex) {
-  @return red($hex), green($hex), blue($hex);
-}
-
 .card {
   background-color: var(--color-sidebar);
-  border-width: 2px;
+  border-width: 1.2px;
   border-style: solid;
   border-color: var(--color-sidebar);
   border-radius: 4px;
@@ -87,6 +88,11 @@ export default {
   margin: 5px;
   padding: 5px;
   color: var(--color-text);
+
+  &.sidebar {
+    border-width: 0px;
+    border-left-width: 4px;
+  }
 
   &.success {
     $color: $color-success;
@@ -129,6 +135,15 @@ export default {
     border-color: $color;
     &.filled {
       color: var(--color-custom-text);
+      background-color: $color;
+    }
+  }
+
+  &.disabled {
+    $color: $color-disabled;
+    border-color: $color;
+    &.filled {
+      color: setColor($color);
       background-color: $color;
     }
   }

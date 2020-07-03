@@ -9,11 +9,11 @@ import "material-design-icons/iconfont/material-icons.css";
 import i18n from "./i18n";
 
 import "@/helpers/firebase";
+import setup from "@/helpers/axios";
+Vue.prototype.$axios = setup();
 
 import DefaultLayout from "./layouts/Default";
 import NoSidebarLayout from "./layouts/NoSidebar";
-import Skeleton from "vue-loading-skeleton";
-Vue.use(Skeleton);
 
 Vue.component("defaultLayout", DefaultLayout);
 Vue.component("noSidebarLayout", NoSidebarLayout);

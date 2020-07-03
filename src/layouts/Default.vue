@@ -1,8 +1,10 @@
 <template>
   <div :class="{ fullscreen: isFullscreen }">
     <sidebar :isFullscreen.sync="isFullscreen" />
-    <div class="contentOfPage">
-      <slot />
+    <div class="pageWrapper">
+      <div class="contentOfPage">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -24,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-.contentOfPage {
+.pageWrapper {
   position: relative;
   padding: 15px;
   margin-left: var(--sidebar-width);
@@ -34,10 +36,15 @@ export default {
     top: var(--navbar-height);
     margin-left: 0;
   }
+
+  .contentOfPage {
+    max-width: 1050px;
+    margin: auto;
+  }
 }
 
 .fullscreen {
-  .contentOfPage {
+  .pageWrapper {
     margin-left: 0;
   }
 }

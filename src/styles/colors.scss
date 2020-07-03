@@ -2,6 +2,7 @@ $color-success: rgb(11, 163, 96);
 $color-info: rgb(2, 144, 205);
 $color-warning: rgb(240, 180, 0);
 $color-danger: rgb(245, 60, 91);
+$color-disabled: rgb(122, 122, 122);
 
 :root {
     --color-background: rgb(240, 240, 240);
@@ -19,8 +20,11 @@ $color-danger: rgb(245, 60, 91);
 
     --color-scrollbar-thumb: rgb(128, 128, 128);
 
-    --color-success: $color-success;
-    --color-info: $color-info;
-    --color-warning: $color-warning;
-    --color-danger: $color-danger;
+    --color-success: rgb(11, 163, 96);
+    --color-info: rgb(2, 144, 205);
+    --color-warning: rgb(240, 180, 0);
+    --color-danger: rgb(245, 60, 91);
+    --color-disabled: rgb(122, 122, 122);
+
+    --color-missing: rgb(255, 49, 186);
 }
