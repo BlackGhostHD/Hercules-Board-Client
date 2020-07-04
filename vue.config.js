@@ -19,8 +19,18 @@ module.exports = {
     resolve: {
       alias: {
         "@": path.join(__dirname, "src"),
-        components: path.join(__dirname, "src/components")
+        "@gql": path.join(__dirname, "src/graphql/query"),
+        "@graphql": path.join(__dirname, "src/graphql/query")
+        // components: path.join(__dirname, "src/components")
       }
     }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule("graphql")
+      .test(/\.(graphql|gql)$/)
+      .use("graphql-tag/loader")
+      .loader("graphql-tag/loader")
+      .end();
   }
 };

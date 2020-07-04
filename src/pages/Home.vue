@@ -11,10 +11,8 @@ export default {
       info: null
     };
   },
-  mounted() {
-    // axios
-    //   .get("https://api.coindesk.com/v1/bpi/currentprice.json")
-    //   .then(response => (this.info = response));
+  async mounted() {
+    await this.$store.dispatch("github/viewerPullRequests");
   }
 };
 </script>

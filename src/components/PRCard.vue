@@ -5,16 +5,20 @@
     :type="status.type"
     :filled="status.filled"
   >
-    <BaseLink :link="user.html_url" target="_blank" class="profilePicture">
-      <ProfilePicture :src="user.avatar_url" size="x-small" />
+    <BaseLink :link="data.author.url" target="_blank" class="profilePicture">
+      <ProfilePicture :src="data.author.avatarUrl" size="x-small" />
     </BaseLink>
     <div class="content">
       <div class="header">
         <div>
-          <BaseLink :link="repoHtmlUrl" target="_blank" class="label">
-            {{ repo }}
+          <BaseLink
+            :link="data.baseRepository.url"
+            target="_blank"
+            class="label"
+          >
+            {{ data.baseRepository.nameWithOwner }}
           </BaseLink>
-          <BaseLink :link="data.html_url" target="_blank" class="title">
+          <BaseLink :link="data.url" target="_blank" class="title">
             {{ data.title }}
           </BaseLink>
         </div>
@@ -28,7 +32,7 @@
         <Label
           :name="'+' + (labels.length - 2)"
           color="var(--color-text)"
-          v-if="labels.length > 2"
+          v-if="data.labels.totalCount - labels.length > 2"
         />
       </div>
       <div class="footer">
@@ -70,20 +74,11 @@ export default {
     y: { type: Number }
   },
   computed: {
-    user() {
-      return this.data?.user;
-    },
     labels() {
-      return this.data?.labels;
+      return this.data.labels.nodes;
     },
     renderLabels() {
       return this.labels.slice(0, 2);
-    },
-    repo() {
-      return this.data?.repository_url.split("repos/")?.[1];
-    },
-    repoHtmlUrl() {
-      return `https://github.com/repos/${this.repo}`;
     }
   },
   async mounted() {
@@ -94,7 +89,7 @@ export default {
       return `https://github.com/${this.repo}/pulls?q=is:open+label:"${label}"`;
     },
     prState() {
-      if (this.data.draft) {
+      if (this.data.isDraft) {
         this.status.type = "disabled";
         this.status.filled = false;
         return;
@@ -111,6 +106,7 @@ export default {
   flex-direction: row;
 
   .profilePicture {
+    height: fit-content;
     margin: 5px 8px 0px 5px;
   }
 
