@@ -1,7 +1,7 @@
 $color-success: rgb(11, 163, 96);
 $color-info: rgb(2, 144, 205);
-$color-warning: rgb(240, 180, 0);
-$color-danger: rgb(245, 60, 91);
+$color-warning: rgb(255, 187, 0);
+$color-danger: rgb(182, 2, 5);
 $color-disabled: rgb(122, 122, 122);
 
 :root {
@@ -22,9 +22,13 @@ $color-disabled: rgb(122, 122, 122);
 
     --color-success: rgb(11, 163, 96);
     --color-info: rgb(2, 144, 205);
-    --color-warning: rgb(240, 180, 0);
-    --color-danger: rgb(245, 60, 91);
+    --color-warning: rgb(255, 187, 0);
+    --color-danger: rgb(182, 2, 5);
     --color-disabled: rgb(122, 122, 122);
+
+    --color-tertiary: rgb(46,84,88);
+    --color-tertiary-light: rgb(80,103,106);
+    --color-tertiary-disabled: rgb(136,136,136);
 
     --color-missing: rgb(255, 49, 186);
 }

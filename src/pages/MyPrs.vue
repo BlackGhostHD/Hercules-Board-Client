@@ -1,25 +1,13 @@
 <template>
   <div class="grid">
     <div style="width: 100%;">
-      <BaseCard>
-        <h5>Meine Pull Requests</h5>
-        <div style="position: absolute; right: 5px; bottom: 5px">
-          <button
-            style="float: right"
-            @click="updateQuery(-1)"
-            :disabled="!prs.pagination.hasPreviousPage"
-          >
-            &lt;
-          </button>
-          <button
-            style="float: right"
-            @click="updateQuery(1)"
-            :disabled="!prs.pagination.hasNextPage"
-          >
-            &gt;
-          </button>
-        </div>
-      </BaseCard>
+      <h5>Meine Pull Requests</h5>
+      <Pagination
+        :perPage="query.limit"
+        :total="prs.pagination.total"
+        @goToPre="goToPre"
+        @goToNext="goToNext"
+      />
     </div>
     <PRCard v-for="pr in prs.list" :key="pr.node.id" :data="pr.node" />
   </div>
@@ -27,35 +15,52 @@
 
 <script>
 import { mapGetters } from "vuex";
-import BaseCard from "@/components/BaseCard";
+// import BaseCard from "@/components/BaseCard";
 import PRCard from "@/components/PRCard";
+import Pagination from "@/components/Pagination";
 
 export default {
   name: "MyPrs",
-  components: { PRCard, BaseCard },
+  components: { PRCard, Pagination },
   computed: {
     ...mapGetters({ prs: "github/getViewerPullRequests" })
   },
   data() {
     return {
       query: {
-        limit: 2,
-        skip: null,
-        direction: 1
+        limit: 12
       }
     };
   },
   mounted() {
-    this.populate();
+    this.populate(this.query);
   },
   methods: {
-    async populate() {
-      await this.$store.dispatch("github/viewerPullRequests", this.query);
+    async populate(q) {
+      await this.$store.dispatch("github/viewerPullRequests", q);
     },
     updateQuery(n) {
-      this.query.skip = this.prs.list[this.prs.list.length - 1].cursor;
+      this.query.skip =
+        n === 1
+          ? this.prs.pagination.endCursor
+          : this.prs.pagination.startCursor;
       this.query.direction = n;
       this.populate();
+    },
+    goToPre() {
+      const query = {
+        ...this.query,
+        before: this.prs.pagination.startCursor
+      };
+      this.populate(query);
+    },
+    goToNext() {
+      const query = {
+        ...this.query,
+        after: this.prs.pagination.endCursor
+      };
+      console.log(this.prs);
+      this.populate(query);
     }
   }
 };
