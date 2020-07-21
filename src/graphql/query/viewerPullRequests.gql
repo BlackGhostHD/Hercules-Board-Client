@@ -1,0 +1,75 @@
+query SearchMyIssues($limit: Int = 10, $after: String, $before: String) {
+    viewer {
+            pullRequests(
+              states: OPEN
+              first: $limit
+              after: $after,
+              before: $before
+              orderBy: { field: UPDATED_AT, direction: DESC }
+            ) {
+                ...PullRequestConnectionParts
+            }
+          }
+}
+
+fragment PullRequestConnectionParts on PullRequestConnection {
+    totalCount
+    pageInfo {
+        ...pageInfoParts
+    }
+    edges {
+        ...PullRequestEdgeParts
+    }
+}
+
+fragment pageInfoParts on PageInfo {
+    hasNextPage
+    hasPreviousPage
+}
+
+
+fragment PullRequestEdgeParts on PullRequestEdge {
+    cursor
+    node {
+        ...PullRequestParts
+    }
+}
+
+fragment PullRequestParts on PullRequest {
+    author {
+        login
+        url
+        avatarUrl
+    }
+    state
+    id
+    title
+    updatedAt
+    isDraft
+    createdAt
+    baseRepository {
+        name
+        url
+        nameWithOwner
+        owner {
+            login
+            url
+        }
+    }
+    changedFiles
+    deletions
+    headRefName
+    mergeable
+    merged
+    number
+    url
+    labels(first: 5) {
+        nodes {
+            name
+            color
+        }
+        totalCount
+    }
+    baseRefName
+    additions
+}

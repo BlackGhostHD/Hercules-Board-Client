@@ -15,7 +15,7 @@ import github from "./github";
 Vuex.Store.prototype.$axios = setup();
 
 const store = new Vuex.Store({
-  plugins: [createPersistedState({ paths: ["user", "github"] }), firebase],
+  plugins: [createPersistedState({ paths: ["user"] }), firebase],
   modules: {
     user,
     github

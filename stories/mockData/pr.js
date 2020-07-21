@@ -1,94 +1,46 @@
 const mockPr = {
-  active_lock_reason: null,
-  author_association: "MEMBER",
-  body: "# Description ",
-  closed_at: null,
-  comments: 6,
-  comments_url:
-    "https://api.github.com/repos/schul-cloud/nuxt-client/issues/1061/comments",
-  created_at: "2020-06-22T08:27:48Z",
-  draft: true,
-  events_url:
-    "https://api.github.com/repos/schul-cloud/nuxt-client/issues/1061/events",
-  html_url: "https://github.com/schul-cloud/nuxt-client/pull/1061",
-  id: 642865797,
-  labels: [
-    {
-      color: "f29f24",
-      default: false,
-      description: "someone is working on that",
-      id: 1223038039,
-      name: "WIP",
-      url: "https://api.github.com/repos/schul-cloud/nuxt-client/labels/WIP"
-    },
-    {
-      color: "d73a4a",
-      default: false,
-      description:
-        "The PR can not be merged because of reasons specified in the PR",
-      id: 1701132109,
-      name: "is blocked",
-      node_id: "MDU6TGFiZWwxNzAxMTMyMTA5",
-      url:
-        "https://api.github.com/repos/schul-cloud/nuxt-client/labels/is%20blocked"
-    },
-    {
-      color: "d73a4a",
-      default: false,
-      description:
-        "The PR can not be merged because of reasons specified in the PR",
-      id: 1701132109,
-      name: "is blocked",
-      node_id: "MDU6TGFiZWwxNzAxMTMyMTA5",
-      url:
-        "https://api.github.com/repos/schul-cloud/nuxt-client/labels/is%20blocked"
-    },
-    {
-      color: "d73a4a",
-      default: false,
-      description:
-        "The PR can not be merged because of reasons specified in the PR",
-      id: 1701132109,
-      name: "is blocked",
-      node_id: "MDU6TGFiZWwxNzAxMTMyMTA5",
-      url:
-        "https://api.github.com/repos/schul-cloud/nuxt-client/labels/is%20blocked"
-    },
-    {
-      color: "d73a4a",
-      default: false,
-      description:
-        "The PR can not be merged because of reasons specified in the PR",
-      id: 1701132109,
-      name: "is blocked",
-      node_id: "MDU6TGFiZWwxNzAxMTMyMTA5",
-      url:
-        "https://api.github.com/repos/schul-cloud/nuxt-client/labels/is%20blocked"
-    }
-  ],
-  labels_url:
-    "https://api.github.com/repos/schul-cloud/nuxt-client/issues/1061/labels{/name}",
-  locked: false,
-  milestone: null,
-  node_id: "MDExOlB1bGxSZXF1ZXN0NDM3NzcyNDU0",
-  number: 1061,
-  repository_url: "https://api.github.com/repos/schul-cloud/nuxt-client",
-  score: 1,
-  state: "open",
-  title: "SC-XXXX - update screenshot and add console output; small bug fix",
-  updated_at: "2020-06-25T14:58:05Z",
-  url: "https://api.github.com/repos/schul-cloud/nuxt-client/issues/1061",
-  user: {
-    avatar_url: "https://avatars1.githubusercontent.com/u/36112357?v=4",
-    html_url: "https://github.com/BlackGhostHD",
-    id: 36112357,
+  author: {
     login: "BlackGhostHD",
-    organizations_url: "https://api.github.com/users/BlackGhostHD/orgs",
-    repos_url: "https://api.github.com/users/BlackGhostHD/repos",
-    site_admin: false,
-    type: "User",
-    url: "https://api.github.com/users/BlackGhostHD"
-  }
+    url: "https://github.com/BlackGhostHD",
+    avatarUrl:
+      "https://avatars2.githubusercontent.com/u/36112357?u=479c3d05f6a306d539cd2e4d6e488203adfac951&v=4",
+    __typename: "User"
+  },
+  state: "OPEN",
+  id: "MDExOlB1bGxSZXF1ZXN0MzYwODUzMjE4",
+  title: "SC-2923 | added lazyload to team page; added helper for pichasso",
+  updatedAt: "2020-06-23T15:10:32Z",
+  isDraft: true,
+  createdAt: "2020-01-09T09:20:18Z",
+  baseRepository: {
+    name: "schulcloud-client",
+    url: "https://github.com/schul-cloud/schulcloud-client",
+    nameWithOwner: "schul-cloud/schulcloud-client",
+    owner: {
+      login: "schul-cloud",
+      url: "https://github.com/schul-cloud",
+      __typename: "Organization"
+    },
+    __typename: "Repository"
+  },
+  changedFiles: 6,
+  deletions: 3,
+  headRefName: "feature/SC-2923-fix-team-page-size",
+  mergeable: "CONFLICTING",
+  merged: false,
+  number: 1561,
+  url: "https://github.com/schul-cloud/schulcloud-client/pull/1561",
+  labels: {
+    nodes: [
+      { name: "Status?", color: "f9d0c4", __typename: "Label" },
+      { name: "WIP", color: "f4e1ad", __typename: "Label" }
+    ],
+    totalCount: 2,
+    __typename: "LabelConnection"
+  },
+  baseRefName: "develop",
+  additions: 72,
+  __typename: "PullRequest"
 };
 
 export default mockPr;
