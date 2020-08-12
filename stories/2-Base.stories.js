@@ -1,8 +1,10 @@
 import { storiesOf } from "@storybook/vue";
-import { color, boolean, text } from "@storybook/addon-knobs";
+import { color, boolean, text, select } from "@storybook/addon-knobs";
 
 import BaseCard from "@/components/BaseCard";
 import BaseProgressbar from "@/components/BaseProgressbar";
+import BaseTooltip from "@/components/BaseTooltip";
+import ProgressCubes from "@/components/ProgressCubes";
 
 storiesOf("2 Base UI Components", module)
   .add("BaseCard", () => ({
@@ -115,6 +117,109 @@ storiesOf("2 Base UI Components", module)
         <BaseProgressbar :max=max :data=data2 style="margin: 5px;"/>
         <BaseProgressbar :max=max :data=data2 size="slim" style="margin: 5px;"/>
         <BaseProgressbar :max=max :data=data2 size="x-slim" style="margin: 5px;"/>
+      </div>
+  `
+  }))
+  .add("ProgressCubes", () => ({
+    components: { ProgressCubes },
+    data() {
+      return {
+        data: [
+          {
+            hint: "Check1",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check2",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check3",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check4",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check5",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check6",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check7",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check8",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check9",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check10",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check11",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check12",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check13",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check14",
+            color: "var(--color-success)",
+          },
+          {
+            hint: "Check15",
+            color: "var(--color-warning)",
+          },
+          {
+            hint: "Check16",
+            color: "var(--color-warning)",
+          },
+          {
+            hint: "Check17",
+            color: "var(--color-warning)",
+          },
+          {
+            hint: "Check18",
+            color: "var(--color-danger)",
+          }
+        ],
+        max: 15
+      };
+    },
+    template: `
+      <div style="margin-left: 50vw; margin-top: 30vh;">
+        <ProgressCubes :max=max :data=data style="margin: 5px;"/>
+      </div>
+  `
+  }))
+  .add("BaseTooltip", () => ({
+    components: { BaseTooltip },
+    props: {
+      position: {
+        default: select("Position", ["top", "bottom", "left", "right"], "top")
+      },
+      text: {
+        default: text("Text", "Some Text")
+      }
+    },
+    template: `
+      <div style="text-align: center; margin-top: 30vh;" >
+        <BaseTooltip :position=position :text=text>Hover over me</BaseTooltip>
       </div>
   `
   }));

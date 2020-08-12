@@ -61,11 +61,9 @@ export default {
   }
 
   .progress-element {
-    padding: 2px;
     text-overflow: ellipsis;
     overflow: hidden;
     text-align: center;
-    font-size: 14px;
   }
 }
 </style>

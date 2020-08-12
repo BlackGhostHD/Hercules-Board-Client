@@ -229,7 +229,7 @@ nav {
 
       li {
         box-shadow: 0 0 0 2pt var(--link-color);
-        border-radius: 10px 0 0 10px;
+        border-radius: 8px 0 0 8px;
       }
     }
 
@@ -241,6 +241,7 @@ nav {
       li {
         color: var(--color-sidebar-selected);
         background-color: var(--color-background);
+        box-shadow: 1px 1px 2px 2px rgba(197, 197, 197, 0.3) inset;
       }
     }
   }
@@ -260,12 +261,13 @@ nav {
     color: var(--color-sidebar-muted);
     padding: 15px 20px;
     margin-bottom: 5px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 8px 0 0 8px;
 
     &:hover {
       color: var(--color-sidebar-selected);
       background-color: var(--color-background);
       cursor: pointer;
+      box-shadow: 2px 2px 3px 1px rgba(197, 197, 197, 0.3) inset;
     }
 
     i {

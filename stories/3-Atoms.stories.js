@@ -71,17 +71,14 @@ storiesOf("3 Atoms Components", module)
       return {
         data1: [
           {
-            hint: "Free Space",
             color: "var(--color-success)",
             value: "6"
           },
           {
-            hint: "Warning",
             color: "var(--color-warning)",
             value: "4"
           },
           {
-            hint: "Danger",
             color: "var(--color-danger)",
             value: "2"
           }

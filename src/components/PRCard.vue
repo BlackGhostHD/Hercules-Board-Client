@@ -36,7 +36,11 @@
         />
       </div>
       <div class="footer">
-        <BaseProgressbar :data="x" :max="y" size="x-slim" />
+        <BaseProgressbar
+          :data="statusChecks"
+          :max="data.status.total"
+          size="x-slim"
+        />
       </div>
     </div>
   </BaseCard>
@@ -67,11 +71,7 @@ export default {
     },
     checks: {
       type: Boolean
-    },
-    x: {
-      type: Array
-    },
-    y: { type: Number }
+    }
   },
   computed: {
     labels() {
@@ -79,6 +79,22 @@ export default {
     },
     renderLabels() {
       return this.labels.slice(0, 2);
+    },
+    statusChecks() {
+      return [
+        {
+          color: "var(--color-success)",
+          value: this.data.status.SUCCESS
+        },
+        {
+          color: "var(--color-warning)",
+          value: this.data.status.PENDING
+        },
+        {
+          color: "var(--color-danger)",
+          value: this.data.status.FAILURE
+        }
+      ];
     }
   },
   async mounted() {
@@ -94,7 +110,11 @@ export default {
         this.status.filled = false;
         return;
       }
-      this.status.type = "success";
+      if (this.data.mergeable === "MERGEABLE") {
+        this.status.type = "success";
+      } else {
+        this.status.type = "danger";
+      }
     }
   }
 };
@@ -102,7 +122,7 @@ export default {
 
 <style lang="scss" scoped>
 .pr-card {
-  width: 300px;
+  width: 320px;
   flex-direction: row;
 
   .profilePicture {

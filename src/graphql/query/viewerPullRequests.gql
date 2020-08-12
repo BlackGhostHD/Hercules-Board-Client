@@ -1,8 +1,8 @@
-query SearchMyIssues($limit: Int = 10, $after: String, $before: String) {
+query SearchMyIssues($last: Int=null, $first: Int=null, $after: String=null, $before: String=null) {
     viewer {
             pullRequests(
-              states: OPEN
-              first: $limit
+              last: $last
+              first: $first
               after: $after,
               before: $before
               orderBy: { field: UPDATED_AT, direction: DESC }
@@ -25,6 +25,8 @@ fragment PullRequestConnectionParts on PullRequestConnection {
 fragment pageInfoParts on PageInfo {
     hasNextPage
     hasPreviousPage
+    startCursor
+    endCursor
 }
 
 
@@ -72,4 +74,42 @@ fragment PullRequestParts on PullRequest {
     }
     baseRefName
     additions
+    commits(last: 1) {
+        nodes {
+            commit {
+                status {
+                    state
+                    contexts {
+                        description
+                        state
+                        context
+                        creator {
+                            login
+                            avatarUrl
+                        }
+                    }
+                }
+                statusCheckRollup {
+                    contexts(first: 20) {
+                        edges {
+                            node {
+                                ... on CheckRun {
+                                    name
+                                    status
+                                    conclusion
+                                    title
+                                    checkSuite {
+                                        app {
+                                            logoUrl
+                                            name
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
