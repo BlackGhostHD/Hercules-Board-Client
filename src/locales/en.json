@@ -1,0 +1,17 @@
+{
+    "routes.name.dashboard": "Dashboard",
+    "routes.name.myPullRequest": "Meine Pull Request",
+    "routes.name.pullRequest": "Offene Pull Request",
+    "routes.name.settings": "Settings",
+    "pages.login.headline": "Welcome back",
+    "pages.login.providers.btnText.github.com": "Login with Github",
+    "pages.settings.profile.LoggedInVia": "Login with {provider}",
+    "pages.settings.profile.logout": "Logout",
+    "components.PullCardBody.stepChecks.failure": "1 check failed | {number} checks failed",
+    "components.PullCardBody.stepChecks.pending": "1 check pending | {number} checks pending",
+    "components.PullCardBody.stepChecks.success": "all checks successful",
+    "components.PullCardBody.stepReview.failure": "Changes requested",
+    "components.PullCardBody.stepReview.pending": "Review requested",
+    "components.PullCardBody.stepReview.success": "Changes approved",
+    "routes.name.tools": "Tools"
+  }

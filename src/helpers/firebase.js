@@ -6,9 +6,9 @@ import { config } from "../config/firebase";
 
 // Initialize Firebase
 try {
-  firebase.initializeApp(config);
+	firebase.initializeApp(config);
 } catch (error) {
-  console.error(error);
+	console.error(error);
 }
 
 export { firebase };

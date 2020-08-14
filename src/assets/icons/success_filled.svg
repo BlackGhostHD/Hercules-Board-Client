@@ -1,0 +1,7 @@
+<svg id="Komponente_18_4" data-name="Komponente 18 – 4" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <path id="Pfad_3" data-name="Pfad 3" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#0ba360"/>
+  <g id="Komponente_2_2" data-name="Komponente 2 – 2" transform="translate(8.5 7.991)">
+    <line id="Linie_12" data-name="Linie 12" x2="5.475" y2="4.433" transform="translate(0 7.509)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Linie_13" data-name="Linie 13" x1="7" y2="13" transform="matrix(0.985, 0.174, -0.174, 0.985, 7.182, 0)" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+</svg>

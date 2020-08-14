@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <slot />
-  </div>
+	<div>
+		<slot />
+	</div>
 </template>
 
 <script>
 export default {
-  name: "NoSidebarLayout",
-  components: {},
-  data() {
-    return {};
-  }
+	name: "NoSidebarLayout",
+	components: {},
+	data() {
+		return {};
+	},
 };
 </script>
 

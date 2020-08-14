@@ -2,8 +2,8 @@ import { storiesOf } from "@storybook/vue";
 import Color from "./components/Color";
 
 storiesOf("1 Base CSS", module).add("Color", () => ({
-  components: { Color },
-  template: `
+	components: { Color },
+	template: `
   <div style="padding: 0 20px;">
   	<h3>Sidebar</h3>
 	<div class="row">
@@ -26,5 +26,5 @@ storiesOf("1 Base CSS", module).add("Color", () => ({
 		<Color variable="--color-text-muted" />
 	</div>
   </div>
-  `
+  `,
 }));

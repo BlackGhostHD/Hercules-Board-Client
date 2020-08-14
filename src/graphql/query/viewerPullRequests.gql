@@ -5,6 +5,7 @@ query SearchMyIssues($last: Int=null, $first: Int=null, $after: String=null, $be
               first: $first
               after: $after,
               before: $before
+              states: OPEN
               orderBy: { field: UPDATED_AT, direction: DESC }
             ) {
                 ...PullRequestConnectionParts
@@ -63,6 +64,7 @@ fragment PullRequestParts on PullRequest {
     headRefName
     mergeable
     merged
+    reviewDecision
     number
     url
     labels(first: 5) {

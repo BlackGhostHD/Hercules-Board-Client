@@ -7,5 +7,12 @@
   "pages.login.providers.btnText.github.com": "Mit Github anmelden",
   "pages.settings.profile.LoggedInVia": "Angemeldet über {provider}",
   "pages.settings.profile.logout": "Abmelden",
+  "components.Pagination.xOfx": "{current} von {total}",
+  "components.PullCardBody.stepChecks.failure": "1 Prüfung fehlgeschlage | {number} Prüfungen fehlgeschlagen",
+  "components.PullCardBody.stepChecks.pending": "1 Prüfung ausstehend | {number} Prüfungen ausstehend",
+  "components.PullCardBody.stepChecks.success": "alle Prüfungen erfolgreich",
+  "components.PullCardBody.stepReview.failure": "Änderungen gefordert",
+  "components.PullCardBody.stepReview.pending": "Review ausstehend",
+  "components.PullCardBody.stepReview.success": "Änderungen angenommen",
   "routes.name.tools": "Tools"
 }

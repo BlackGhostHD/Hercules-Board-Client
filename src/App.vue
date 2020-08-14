@@ -1,25 +1,25 @@
 <template>
-  <div id="app">
-    <component :is="layout">
-      <router-view />
-    </component>
-  </div>
+	<div id="app">
+		<component :is="layout">
+			<router-view />
+		</component>
+	</div>
 </template>
 
 <script>
 const defaulLayout = "defaultLayout";
 
 export default {
-  name: "App",
-  components: {},
-  data() {
-    return {};
-  },
-  computed: {
-    layout() {
-      return this.$route.meta.layout || defaulLayout;
-    }
-  }
+	name: "App",
+	components: {},
+	data() {
+		return {};
+	},
+	computed: {
+		layout() {
+			return this.$route.meta.layout || defaulLayout;
+		},
+	},
 };
 </script>
 

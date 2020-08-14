@@ -1,0 +1,101 @@
+query SearchPreviewRequested($last: Int=null, $first: Int=null, $after: String=null, $before: String=null) {
+  search(
+      query: "type:pr state:open review-requested:@me", 
+      type: ISSUE, 
+      last: $last
+      first: $first
+      after: $after,
+      before: $before
+    ) {
+        issueCount
+        pageInfo {
+            endCursor
+            startCursor
+        }
+        edges {
+            node {
+                ... on PullRequest {
+                    ...PullRequestParts
+                }
+            }
+        }
+    }
+}
+
+fragment PullRequestParts on PullRequest {
+    author {
+        login
+        url
+        avatarUrl
+    }
+    state
+    id
+    title
+    updatedAt
+    isDraft
+    createdAt
+    baseRepository {
+        name
+        url
+        nameWithOwner
+        owner {
+            login
+            url
+        }
+    }
+    changedFiles
+    deletions
+    headRefName
+    mergeable
+    merged
+    reviewDecision
+    number
+    url
+    labels(first: 5) {
+        nodes {
+            name
+            color
+        }
+        totalCount
+    }
+    baseRefName
+    additions
+    commits(last: 1) {
+        nodes {
+            commit {
+                status {
+                    state
+                    contexts {
+                        description
+                        state
+                        context
+                        creator {
+                            login
+                            avatarUrl
+                        }
+                    }
+                }
+                statusCheckRollup {
+                    contexts(first: 20) {
+                        edges {
+                            node {
+                                ... on CheckRun {
+                                    name
+                                    status
+                                    conclusion
+                                    title
+                                    checkSuite {
+                                        app {
+                                            logoUrl
+                                            name
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

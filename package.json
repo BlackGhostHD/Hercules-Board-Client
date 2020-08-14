@@ -17,6 +17,7 @@
   "dependencies": {
     "@storybook/addon-knobs": "^5.3.18",
     "@vue/cli": "^4.3.1",
+    "apollo-progressive-fragment-matcher": "^1.0.8",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "css-loader": "^3.5.3",
@@ -41,6 +42,7 @@
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/vue": "^5.3.18",
+    "@testing-library/jest-dom": "^5.11.3",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-plugin-pwa": "~4.3.0",
