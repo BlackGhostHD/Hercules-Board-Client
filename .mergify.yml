@@ -30,3 +30,13 @@ pull_request_rules:
       label:
         remove:
           - requires mauelle check
+          
+  - name: add auto_merged label when automatically merged
+    conditions:
+      - merged
+      - merged-by=mergify[bot]
+    actions:
+      label:
+        add:
+          - auto_merged
+    
