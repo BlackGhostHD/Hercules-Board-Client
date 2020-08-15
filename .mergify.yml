@@ -4,7 +4,39 @@ pull_request_rules:
     conditions:
       - author~=dependabot(-preview)?\[bot\]
       - label~=dependencies
+      - label!=requires mauelle check
     actions:
       merge:
         method: squash
         strict: smart
+
+### Auto label ###################
+  - name: add requires mauelle check label to not automatically mergeable pr
+    conditions:
+      - author~=dependabot(-preview)?\[bot\]
+      - label~=dependencies
+      - status-failure~=Travis CI
+    actions:
+      label:
+        add:
+          - requires mauelle check
+  - name: remove requires mauelle check label to not automatically mergeable pr
+    conditions:
+      - author~=dependabot(-preview)?\[bot\]
+      - label~=dependencies
+      - label~=requires mauelle check
+      - status-success~=Travis CI
+    actions:
+      label:
+        remove:
+          - requires mauelle check
+          
+  - name: add auto_merged label when automatically merged
+    conditions:
+      - merged
+      - merged-by=mergify[bot]
+    actions:
+      label:
+        add:
+          - auto_merged
+    
