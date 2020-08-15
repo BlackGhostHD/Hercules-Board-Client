@@ -40,7 +40,7 @@
     "@babel/core": "^7.9.0",
     "@storybook/addon-actions": "^6.0.7",
     "@storybook/addon-links": "^5.3.18",
-    "@storybook/addons": "^5.3.18",
+    "@storybook/addons": "^6.0.7",
     "@storybook/vue": "^5.3.18",
     "@testing-library/jest-dom": "^5.11.3",
     "@vue/cli-plugin-babel": "~4.3.0",
