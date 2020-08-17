@@ -4,7 +4,6 @@ an GitHub pull requests monitoring board
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 
 ## Code Status
 [![Travis Branch Status](https://img.shields.io/travis/com/blackghosthd/hercules-board-client/master?style=for-the-badge)](https://travis-ci.com/github/blackghosthd/hercules-board-client)
