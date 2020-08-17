@@ -45,7 +45,7 @@
     "@testing-library/jest-dom": "^5.11.3",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.5.3",
-    "@vue/cli-plugin-pwa": "~4.3.0",
+    "@vue/cli-plugin-pwa": "~4.5.3",
     "@vue/cli-plugin-router": "~4.5.3",
     "@vue/cli-plugin-unit-jest": "~4.3.0",
     "@vue/cli-plugin-vuex": "~4.3.0",
