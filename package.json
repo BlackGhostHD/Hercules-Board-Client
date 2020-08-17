@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@storybook/addon-actions": "^6.0.7",
+    "@storybook/addon-actions": "^6.0.10",
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^6.0.7",
     "@storybook/vue": "^6.0.10",
