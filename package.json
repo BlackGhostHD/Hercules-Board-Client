@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@storybook/addon-knobs": "^6.0.10",
-    "@vue/cli": "^4.3.1",
+    "@vue/cli": "^4.5.4",
     "apollo-progressive-fragment-matcher": "^1.0.8",
     "axios": "^0.20.0",
     "core-js": "^3.6.4",
