@@ -1,6 +1,6 @@
 # Hercules Board
 
-an GitHub pull requests monitoring board
+a GitHub pull requests monitoring board
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
