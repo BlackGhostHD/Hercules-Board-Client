@@ -41,7 +41,7 @@
     "@storybook/addon-actions": "^6.0.12",
     "@storybook/addon-links": "^6.0.18",
     "@storybook/addons": "^6.0.12",
-    "@storybook/vue": "^6.0.10",
+    "@storybook/vue": "^6.0.20",
     "@testing-library/jest-dom": "^5.11.4",
     "@vue/cli-plugin-babel": "~4.5.4",
     "@vue/cli-plugin-eslint": "~4.5.3",
