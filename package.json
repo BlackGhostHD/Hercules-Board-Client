@@ -30,7 +30,7 @@
     "snyk": "^1.401.0",
     "vue": "^2.6.12",
     "vue-i18n": "^8.21.1",
-    "vue-router": "^3.4.4",
+    "vue-router": "^3.4.5",
     "vue-style-loader": "^4.1.2",
     "vue-toasted": "^1.1.28",
     "vuex": "^3.2.0",
